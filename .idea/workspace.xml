@@ -2,13 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e220a48-1b18-45f4-b59a-df883e3f808c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/react-app/src/actions/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-app/src/actions/donationCandidate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-app/src/actions/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-app/src/components/DonationCandidateForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-app/src/components/DonationCandidates.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-app/src/components/useForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-app/src/reducers/donationCandidate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-app/src/reducers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-app/src/roughWorks.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NetReactCrud/NetReactCrud.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NetReactCrud/NetReactCrud.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NetReactCrud/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NetReactCrud/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NetReactCrud/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/NetReactCrud/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,7 +76,8 @@
       <workItem from="1615090801395" duration="663000" />
       <workItem from="1615091475615" duration="187000" />
       <workItem from="1615091944736" duration="104000" />
-      <workItem from="1615092071117" duration="1073000" />
+      <workItem from="1615092071117" duration="1590000" />
+      <workItem from="1615130386471" duration="9350000" />
     </task>
     <task id="LOCAL-00001" summary="React added with debugging">
       <created>1615092257476</created>
@@ -79,10 +102,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="React added with debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="React added with debugging" />
+    <MESSAGE value="UI Skeleton done." />
+    <option name="LAST_COMMIT_MESSAGE" value="UI Skeleton done." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
