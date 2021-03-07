@@ -15,6 +15,7 @@ import {connect} from "react-redux"
 import * as actions from "../actions/donationCandidate";
 import {create} from "../actions/donationCandidate";
 import {donationCandidate} from "../reducers/donationCandidate";
+import {useToasts} from "react-toast-notifications";
 
 const styles = theme => ({
     root: {
@@ -43,6 +44,7 @@ const initialFieldValues = {
 
 
 const DonationCandidateForm = ({classes, ...props}) => {
+    const {addToast} = useToasts();
 
     const validate = (fieldValues = values) => {
         let temp = {...errors}
@@ -87,7 +89,8 @@ const DonationCandidateForm = ({classes, ...props}) => {
         errors,
         setErrors,
         handleInputChange,
-    } = useForm(initialFieldValues, validate)
+        resetForm
+    } = useForm(initialFieldValues, validate, props.setCurrentId)
 
     // material ui select
     const inputLabel = React.useRef(null)
@@ -103,11 +106,13 @@ const DonationCandidateForm = ({classes, ...props}) => {
 
             if (props.currentId === 0){
                 props.createDonationCandidate(values, () => {
-                    window.alert("Successfully inserted record.")
+                    resetForm()
+                    addToast("Successfully inserted record.", {appearance : 'success'})
                 })
             } else {
                 props.updateDonationCandidate(props.currentId, values, ()=>{
-                    window.alert("Successfully updated record.")
+                    resetForm()
+                    addToast("Successfully updated record.", {appearance : 'success'})
                 })
             }
 
@@ -206,6 +211,7 @@ const DonationCandidateForm = ({classes, ...props}) => {
                         <Button
                             variant="contained"
                             className={classes.smallMargin}
+                            onClick={resetForm}
                         >
                             Reset
                         </Button>
