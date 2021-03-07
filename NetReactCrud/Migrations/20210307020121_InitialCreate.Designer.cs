@@ -9,7 +9,7 @@ using NetReactCrud.Models;
 namespace NetReactCrud.Migrations
 {
     [DbContext(typeof(DonationDbContext))]
-    [Migration("20210306184814_InitialCreate")]
+    [Migration("20210307020121_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

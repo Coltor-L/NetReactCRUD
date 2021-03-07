@@ -28,10 +28,12 @@ namespace NetReactCrud
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //var test = Configuration.GetConnectionString("DefaultConnection");
             services.AddControllers();
+            var test = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DonationDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DevConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
         services.AddSwaggerGen(c =>
