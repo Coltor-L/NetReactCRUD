@@ -45,7 +45,7 @@ namespace NetReactCrud.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Candidate");
+                    b.ToTable("Candidates");
                 });
 #pragma warning restore 612, 618
         }

@@ -7,7 +7,7 @@ namespace NetReactCrud.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Candidate",
+                name: "Candidates",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -21,14 +21,14 @@ namespace NetReactCrud.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Candidate", x => x.Id);
+                    table.PrimaryKey("PK_Candidates", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Candidate");
+                name: "Candidates");
         }
     }
 }

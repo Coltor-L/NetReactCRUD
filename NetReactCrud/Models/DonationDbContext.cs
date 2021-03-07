@@ -9,7 +9,7 @@ namespace NetReactCrud.Models
             
         }
 
-        public DbSet<DonationCandidate> Candidate { get; set; }
+        public DbSet<DonationCandidate> Candidates { get; set; }
         
     }
 }

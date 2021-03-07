@@ -9,7 +9,7 @@ using NetReactCrud.Models;
 namespace NetReactCrud.Migrations
 {
     [DbContext(typeof(DonationDbContext))]
-    [Migration("20210307020121_InitialCreate")]
+    [Migration("20210307032241_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,7 +47,7 @@ namespace NetReactCrud.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Candidate");
+                    b.ToTable("Candidates");
                 });
 #pragma warning restore 612, 618
         }
