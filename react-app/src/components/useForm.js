@@ -1,16 +1,19 @@
 import React, {useState} from "react";
 
-const useForm = (initialFieldValues) => {
+const useForm = (initialFieldValues, validator) => {
     const [values, setValues] = React.useState(initialFieldValues)
     const [errors, setErrors] = React.useState({})
 
     const handleInputChange = e => {
         const {name, value} = e.target
+        const fieldValue = {[name]: value}
 
         setValues({
             ...values,
-            [name]: value
+            ...fieldValue
         })
+
+        validator(fieldValue)
     }
 
     return {

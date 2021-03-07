@@ -1,5 +1,15 @@
 import React from "react";
-import {Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, withStyles} from "@material-ui/core";
+import {
+    Button,
+    FormControl,
+    FormHelperText,
+    Grid,
+    InputLabel,
+    MenuItem,
+    Select,
+    TextField,
+    withStyles
+} from "@material-ui/core";
 import useForm from "./useForm";
 
 const styles = theme => ({
@@ -29,25 +39,50 @@ const initialFieldValues = {
 
 
 const DonationCandidateForm = ({classes, ...props}) => {
+
+    const validate = (fieldValues = values) => {
+        let temp = {}
+
+        if ('fullName' in fieldValues){
+            temp.fullName = fieldValues.fullName ? "" : "This field is required."
+        }
+
+        if ('mobile' in fieldValues) {
+            temp.mobile = fieldValues.mobile ? "" : "This field is required."
+        }
+
+        if ('bloodGroup' in fieldValues) {
+            temp.bloodGroup = fieldValues.bloodGroup ? "" : "This field is required."
+        }
+
+        if ('email' in fieldValues){
+            temp.email = (/^$|.*@.+..+/).test(fieldValues.email) ? "" : "Email is not valid."
+        }
+
+        if ('age' in fieldValues){
+            temp.age = Number(fieldValues.age) > 0 ? "" : "Age is not valid."
+        }
+
+        if ('address' in fieldValues){
+            temp.address = fieldValues.address ? "" : "This field is required."
+        }
+
+        setErrors({
+            ...temp
+        })
+
+        if (fieldValues === values){
+            return Object.values(temp).every(x => x === "");
+        }
+
+    }
+
     const {
         values,
         errors,
         setErrors,
         handleInputChange,
-    } = useForm(initialFieldValues)
-
-    const validate = () => {
-        let temp = {}
-        temp.fullName = values.fullName ? "" : "This field is required."
-        temp.mobile = values.mobile ? "" : "This field is required."
-        temp.bloodGroup = values.bloodGroup ? "" : "This field is required."
-        temp.email = (/^$|.*@.+..+/).test(values.email) ? "" : "Email is not valid."
-        setErrors({
-            ...temp
-        })
-
-        return Object.values(temp).every(x => x === "");
-    }
+    } = useForm(initialFieldValues, validate)
 
     // material ui select
     const inputLabel = React.useRef(null)
@@ -59,7 +94,7 @@ const DonationCandidateForm = ({classes, ...props}) => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        if (validate()){
+        if (validate()) {
             window.alert("validation succeeded.")
         }
     }
@@ -74,6 +109,7 @@ const DonationCandidateForm = ({classes, ...props}) => {
                         label="Full Name"
                         value={values.fullName}
                         onChange={handleInputChange}
+                        {...(errors.fullName && {error: true, helperText: errors.fullName})}
                     />
                     <TextField
                         name="email"
@@ -81,8 +117,11 @@ const DonationCandidateForm = ({classes, ...props}) => {
                         label="Email"
                         value={values.email}
                         onChange={handleInputChange}
+                        {...(errors.email && {error: true, helperText: errors.email})}
                     />
-                    <FormControl variant="outlined" className={classes.formControl}>
+                    <FormControl variant="outlined" className={classes.formControl}
+                                 {...(errors.bloodGroup && {error: true, helperText: errors.bloodGroup})}
+                    >
                         <InputLabel ref={inputLabel}>Blood Group</InputLabel>
                         <Select
                             name="bloodGroup"
@@ -100,6 +139,7 @@ const DonationCandidateForm = ({classes, ...props}) => {
                             <MenuItem value="O+">O +ve</MenuItem>
                             <MenuItem value="O-">O -ve</MenuItem>
                         </Select>
+                        {errors.bloodGroup && <FormHelperText>{errors.bloodGroup}</FormHelperText>}
                     </FormControl>
                 </Grid>
                 <Grid item xs={6}>
@@ -109,6 +149,7 @@ const DonationCandidateForm = ({classes, ...props}) => {
                         label="Mobile"
                         value={values.mobile}
                         onChange={handleInputChange}
+                        {...(errors.mobile && {error: true, helperText: errors.mobile})}
                     />
                     <TextField
                         name="age"
@@ -116,6 +157,7 @@ const DonationCandidateForm = ({classes, ...props}) => {
                         label="Age"
                         value={values.age}
                         onChange={handleInputChange}
+                        {...(errors.age && {error: true, helperText: errors.age})}
                     />
                     <TextField
                         name="address"
@@ -123,6 +165,7 @@ const DonationCandidateForm = ({classes, ...props}) => {
                         label="Address"
                         value={values.address}
                         onChange={handleInputChange}
+                        {...(errors.address && {error: true, helperText: errors.address})}
                     />
                     <div>
                         <Button
