@@ -45,7 +45,7 @@ const initialFieldValues = {
 const DonationCandidateForm = ({classes, ...props}) => {
 
     const validate = (fieldValues = values) => {
-        let temp = {}
+        let temp = {...errors}
 
         if ('fullName' in fieldValues){
             temp.fullName = fieldValues.fullName ? "" : "This field is required."
