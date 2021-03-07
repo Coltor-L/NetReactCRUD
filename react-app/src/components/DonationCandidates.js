@@ -1,8 +1,21 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {connect} from "react-redux"
 import * as actions from "../actions/donationCandidate"
 import DonationCandidateForm from "./DonationCandidateForm";
-import {Grid, Paper, TableContainer, TableHead, TableRow, Table, TableCell, TableBody, withStyles} from "@material-ui/core";
+import EditIcon from "@material-ui/icons/Edit";
+import DeleteIcon from "@material-ui/icons/Delete";
+import {
+    Grid,
+    Paper,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Table,
+    TableCell,
+    TableBody,
+    withStyles,
+    ButtonGroup, Button
+} from "@material-ui/core";
 
 const styles = theme => ({
     root: {
@@ -18,6 +31,9 @@ const styles = theme => ({
 })
 
 const DonationCandidates = ({classes, ...props}) => {
+    const [currentId, setCurrentId] = useState(0)
+
+
     useEffect(() => {
         props.fetchAllDonationCandidates()
     }, [])
@@ -26,7 +42,7 @@ const DonationCandidates = ({classes, ...props}) => {
         <Paper className={classes.paper} elevation={3}>
             <Grid container>
                 <Grid item xs={6}>
-                    <DonationCandidateForm/>
+                    <DonationCandidateForm {...({currentId, setCurrentId})}/>
 
                 </Grid>
                 <Grid item xs={6}>
@@ -37,6 +53,7 @@ const DonationCandidates = ({classes, ...props}) => {
                                     <TableCell>Name</TableCell>
                                     <TableCell>Mobile</TableCell>
                                     <TableCell>Blood Group</TableCell>
+                                    <TableCell> </TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -47,6 +64,16 @@ const DonationCandidates = ({classes, ...props}) => {
                                                 <TableCell>{record.fullName}</TableCell>
                                                 <TableCell>{record.mobile}</TableCell>
                                                 <TableCell>{record.bloodGroup}</TableCell>
+                                                <TableCell>
+                                                    <ButtonGroup variant="text">
+                                                        <Button><EditIcon color="primary"
+                                                            onClick={() => {
+                                                                setCurrentId(record.id)
+                                                            }}
+                                                        /></Button>
+                                                        <Button><DeleteIcon color="secondary"/></Button>
+                                                    </ButtonGroup>
+                                                </TableCell>
                                             </TableRow>)
                                     })
                                 }

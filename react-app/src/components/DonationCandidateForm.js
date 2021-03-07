@@ -11,6 +11,10 @@ import {
     withStyles
 } from "@material-ui/core";
 import useForm from "./useForm";
+import {connect} from "react-redux"
+import * as actions from "../actions/donationCandidate";
+import {create} from "../actions/donationCandidate";
+import {donationCandidate} from "../reducers/donationCandidate";
 
 const styles = theme => ({
     root: {
@@ -79,6 +83,7 @@ const DonationCandidateForm = ({classes, ...props}) => {
 
     const {
         values,
+        setValues,
         errors,
         setErrors,
         handleInputChange,
@@ -95,9 +100,30 @@ const DonationCandidateForm = ({classes, ...props}) => {
         e.preventDefault()
 
         if (validate()) {
-            window.alert("validation succeeded.")
+
+            if (props.currentId === 0){
+                props.createDonationCandidate(values, () => {
+                    window.alert("Successfully inserted record.")
+                })
+            } else {
+                props.updateDonationCandidate(props.currentId, values, ()=>{
+                    window.alert("Successfully updated record.")
+                })
+            }
+
         }
     }
+
+    React.useEffect(() => {
+        if(props.currendId === 0){
+            return;
+        }
+
+        setValues({
+            ...props.donationCandidateList.find(x => x.id === props.currentId)
+        })
+
+    }, [props.currentId])
 
     return (
         <form autoComplete={"off"} noValidate className={classes.root} onSubmit={handleSubmit}>
@@ -192,4 +218,16 @@ const DonationCandidateForm = ({classes, ...props}) => {
     );
 }
 
-export default withStyles(styles)(DonationCandidateForm);
+
+const mapStateToProps = state => {
+    return {
+        donationCandidateList: state.donationCandidate.list
+    }
+}
+
+const mapActionToProps = {
+    createDonationCandidate: actions.create,
+    updateDonationCandidate: actions.update
+}
+
+export default connect(mapStateToProps, mapActionToProps)(withStyles(styles)(DonationCandidateForm));

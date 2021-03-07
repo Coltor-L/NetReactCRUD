@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6e220a48-1b18-45f4-b59a-df883e3f808c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/src/actions/donationCandidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/actions/donationCandidate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-app/src/components/DonationCandidateForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/components/DonationCandidateForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-app/src/components/useForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/components/useForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/src/components/DonationCandidates.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/components/DonationCandidates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/src/reducers/donationCandidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/reducers/donationCandidate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +59,7 @@
       <workItem from="1615091475615" duration="187000" />
       <workItem from="1615091944736" duration="104000" />
       <workItem from="1615092071117" duration="1590000" />
-      <workItem from="1615130386471" duration="14384000" />
+      <workItem from="1615130386471" duration="16297000" />
     </task>
     <task id="LOCAL-00001" summary="React added with debugging">
       <created>1615092257476</created>
@@ -80,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615148103592</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Real time validation">
+      <created>1615149695331</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615149695331</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,7 +111,8 @@
     <MESSAGE value="React added with debugging" />
     <MESSAGE value="UI Skeleton done." />
     <MESSAGE value="Some Form validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some Form validation" />
+    <MESSAGE value="Real time validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Real time validation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
