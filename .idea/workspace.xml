@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6e220a48-1b18-45f4-b59a-df883e3f808c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-app/src/components/DonationCandidateForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/components/DonationCandidateForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-app/src/components/useForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/components/useForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/src/actions/donationCandidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/actions/donationCandidate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-app/src/components/DonationCandidates.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-app/src/components/DonationCandidates.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +57,7 @@
       <workItem from="1615091475615" duration="187000" />
       <workItem from="1615091944736" duration="104000" />
       <workItem from="1615092071117" duration="1590000" />
-      <workItem from="1615130386471" duration="17166000" />
+      <workItem from="1615130386471" duration="17687000" />
     </task>
     <task id="LOCAL-00001" summary="React added with debugging">
       <created>1615092257476</created>
@@ -104,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615151976089</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Toasts added for successful creates and updates">
+      <created>1615152459843</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615152459843</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +133,8 @@
     <MESSAGE value="Real time validation" />
     <MESSAGE value="Create, Update added" />
     <MESSAGE value="Don't delete old errors on new errors during validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Don't delete old errors on new errors during validation" />
+    <MESSAGE value="Toasts added for successful creates and updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Toasts added for successful creates and updates" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

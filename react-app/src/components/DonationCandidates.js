@@ -4,6 +4,7 @@ import * as actions from "../actions/donationCandidate"
 import DonationCandidateForm from "./DonationCandidateForm";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import {useToasts} from "react-toast-notifications";
 import {
     Grid,
     Paper,
@@ -31,12 +32,25 @@ const styles = theme => ({
 })
 
 const DonationCandidates = ({classes, ...props}) => {
+    const {addToast} = useToasts();
     const [currentId, setCurrentId] = useState(0)
 
 
     useEffect(() => {
         props.fetchAllDonationCandidates()
     }, [])
+
+    const onDelete = record => {
+
+        if(!window.confirm(`Are you sure you want to delete ${record.fullName} from the database?`)){
+            return;
+        }
+
+        props.deleteDonationCandidate(record.id, () => {
+            addToast(`Deleted ${record.fullName} from the database.`, {appearance:'info'})
+        })
+
+    }
 
     return (
         <Paper className={classes.paper} elevation={3}>
@@ -71,7 +85,9 @@ const DonationCandidates = ({classes, ...props}) => {
                                                                 setCurrentId(record.id)
                                                             }}
                                                         /></Button>
-                                                        <Button><DeleteIcon color="secondary"/></Button>
+                                                        <Button><DeleteIcon color="secondary"
+                                                                            onClick={()=> onDelete(record)}
+                                                        /></Button>
                                                     </ButtonGroup>
                                                 </TableCell>
                                             </TableRow>)
@@ -93,7 +109,8 @@ const mapStateToProps = state => {
 }
 
 const mapActionToProps = {
-    fetchAllDonationCandidates: actions.fetchAll
+    fetchAllDonationCandidates: actions.fetchAll,
+    deleteDonationCandidate: actions.deleteCandidate
 }
 
 export default connect(mapStateToProps, mapActionToProps)(withStyles(styles)(DonationCandidates));

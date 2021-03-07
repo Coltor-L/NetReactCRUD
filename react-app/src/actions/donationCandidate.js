@@ -38,9 +38,7 @@ export const update = (id, data, onSuccess) => dispatch => {
         }).catch(err => console.log(err))
 }
 
-export const deleteCandidate = (id, data, onSuccess) => dispatch => {
-    data = formatData(data)
-
+export const deleteCandidate = (id, onSuccess) => dispatch => {
     api.donationCandidate().delete(id)
         .then(res => {
             dispatch({
