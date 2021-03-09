@@ -16,6 +16,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0
 WORKDIR out/
 
 COPY --from=build build/out .
-COPY --from=build build/appsettings.json .
+COPY --from=build build/appsettings.Development.json .
 
 ENTRYPOINT ["dotnet", "NetReactCrud.dll"]
